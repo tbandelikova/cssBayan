@@ -15,15 +15,15 @@ input[type="checkbox"] {
     width: 0;
 }
 
-input[type="checkbox"]:checked ~ .icon {
+input[type="checkbox"]:checked~.icon {
     transform: rotate(45deg);
 }
 
-input[type="checkbox"]:checked ~ .meme-img {
+input[type="checkbox"]:checked~.meme-img {
     max-height: 100vh;
 }
 
-input[type="checkbox"]:checked ~ .meme-img > * {
+input[type="checkbox"]:checked~.meme-img>* {
     scale: 1;
     opacity: 1;
 }
@@ -47,10 +47,13 @@ input[type="checkbox"]:checked ~ .meme-img > * {
 
 .meme-title {
     font-weight: 500;
+    font-size: 1rem;
 }
+
 .icon {
     transition: all .5s;
 }
+
 .meme-img {
     max-height: 0;
     width: 85%;
@@ -58,6 +61,7 @@ input[type="checkbox"]:checked ~ .meme-img > * {
     margin: 0 auto;
     padding: 0.3rem;
 }
+
 .meme-img img {
     scale: 0;
     opacity: 0;
@@ -66,4 +70,37 @@ input[type="checkbox"]:checked ~ .meme-img > * {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+@media (min-width: 660px) {
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .meme-title {
+        font-size: 1.5rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    .meme-img {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .meme-title {
+        font-size: 2rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
+
+    .meme-img {
+        width: 50%;
+    }
 }
