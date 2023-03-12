@@ -24,18 +24,14 @@ input[type="radio"]:checked~.meme-title span {
     color: black;
 }
 
-input[type="radio"]:checked~.meme-img {
+input[type="radio"]:checked~.meme-title .meme-img {
     max-height: 100vh;
-}
-
-input[type="radio"]:checked~.meme-img>* {
-    scale: 1;
     opacity: 1;
 }
 
 .container {
     width: 90%;
-    max-width: 75rem;
+    max-width: 70rem;
     margin: 0 auto;
     padding: 1rem;
 }
@@ -55,17 +51,12 @@ input[type="radio"]:checked~.meme-img>* {
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
-
     flex-wrap: wrap;
-}
-
-.meme-img {
-    flex-basis: 100%;
 }
 
 .meme-title>* {
     display: block;
-    transition: all .5s;
+    transition: all .4s .3s linear;
 }
 
 .meme-title span {
@@ -77,21 +68,14 @@ input[type="radio"]:checked~.meme-img>* {
 }
 
 .meme-img {
-    max-height: 0;
+    flex-basis: 85%;
     width: 85%;
-    transition: all .5s .5s linear;
     margin: 0 auto;
-    padding: 0.3rem;
-}
-
-.meme-img img {
-    scale: 0;
-    opacity: 0;
-    transition: all .3s .5s linear;
-    width: 100%;
-    height: 100%;
+    padding: 0.5rem;
     object-fit: cover;
     object-position: center;
+    max-height: 0;
+    opacity: 0;
 }
 
 @media (min-width: 660px) {
@@ -103,16 +87,16 @@ input[type="radio"]:checked~.meme-img>* {
         font-size: 1.5rem;
     }
 
-    .icon {
-        font-size: 1.5rem;
-    }
-
     .meme-img {
-        width: 60%;
+        padding: 0.5rem 3rem;
     }
 }
 
 @media (min-width: 1024px) {
+
+    .container {
+        width: 80%;
+    }
 
     .memes>*>* {
         cursor: pointer;
@@ -122,12 +106,8 @@ input[type="radio"]:checked~.meme-img>* {
         font-size: 2rem;
     }
 
-    .icon {
-        font-size: 2rem;
-    }
-
     .meme-img {
-        width: 50%;
+        padding: 0.5rem 10rem;
     }
 }
 
@@ -136,22 +116,16 @@ input[type="radio"]:checked~.meme-img>* {
         opacity: 1;
     }
 
+    .memes-item:hover>.meme-title .icon {
+        transform: rotate(45deg);
+    }
+
     .memes:hover span {
         color: black;
     }
 
-    .memes>*>*:hover~.meme-img,
-    .meme-img:hover {
+    .meme-title:hover>.meme-img {
         max-height: 100vh;
-    }
-
-    .memes>*>*:hover~.meme-img>*,
-    .meme-img:hover>img {
-        scale: 1;
         opacity: 1;
-    }
-
-    .memes-item:hover>.meme-title .icon {
-        transform: rotate(45deg);
     }
 }
