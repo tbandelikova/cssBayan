@@ -57,7 +57,7 @@ input[type="checkbox"]:checked~.meme-img>* {
     justify-content: space-between;
 }
 
-.meme-title > * {
+.meme-title>* {
     display: block;
     transition: all .5s;
 }
@@ -73,7 +73,7 @@ input[type="checkbox"]:checked~.meme-img>* {
 .meme-img {
     max-height: 0;
     width: 85%;
-    transition: all .5s;
+    transition: all .5s .5s linear;
     margin: 0 auto;
     padding: 0.3rem;
 }
@@ -81,7 +81,7 @@ input[type="checkbox"]:checked~.meme-img>* {
 .meme-img img {
     scale: 0;
     opacity: 0;
-    transition: all .3s;
+    transition: all .3s .5s linear;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -108,6 +108,10 @@ input[type="checkbox"]:checked~.meme-img>* {
 
 @media (min-width: 1024px) {
 
+    .memes>*>* {
+        cursor: pointer;
+    }
+
     .meme-title {
         font-size: 2rem;
     }
@@ -118,5 +122,30 @@ input[type="checkbox"]:checked~.meme-img>* {
 
     .meme-img {
         width: 50%;
+    }
+}
+
+@media (hover: hover) {
+    .memes:hover .icon {
+        opacity: 1;
+    }
+
+    .memes:hover span {
+        color: black;
+    }
+
+    .memes>*>*:hover~.meme-img,
+    .meme-img:hover {
+        max-height: 100vh;
+    }
+
+    .memes>*>*:hover~.meme-img>*,
+    .meme-img:hover>img {
+        scale: 1;
+        opacity: 1;
+    }
+
+    .memes-item:hover>.meme-title .icon {
+        transform: rotate(45deg);
     }
 }
