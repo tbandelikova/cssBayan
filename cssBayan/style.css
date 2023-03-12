@@ -12,11 +12,16 @@ body {
 }
 
 input[type="checkbox"] {
-    width: 0;
+    display: none;
 }
 
-input[type="checkbox"]:checked~.icon {
+input[type="checkbox"]:checked~.meme-title .icon {
     transform: rotate(45deg);
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked~.meme-title span {
+    color: black;
 }
 
 input[type="checkbox"]:checked~.meme-img {
@@ -42,16 +47,27 @@ input[type="checkbox"]:checked~.meme-img>* {
 
 .memes-item {
     padding-top: 0.5rem;
-    border-top: 0.2em double #B06FAB;
+    border-top: 0.2em double #b06fab;
 }
 
 .meme-title {
     font-weight: 500;
     font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.meme-title > * {
+    display: block;
+    transition: all .5s;
+}
+
+.meme-title span {
+    color: #b06fab;
 }
 
 .icon {
-    transition: all .5s;
+    opacity: 0;
 }
 
 .meme-img {
