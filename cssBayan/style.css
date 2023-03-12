@@ -11,24 +11,24 @@ body {
     font-size: 1rem;
 }
 
-input[type="checkbox"] {
+input[type="radio"] {
     display: none;
 }
 
-input[type="checkbox"]:checked~.meme-title .icon {
+input[type="radio"]:checked~.meme-title .icon {
     transform: rotate(45deg);
     opacity: 1;
 }
 
-input[type="checkbox"]:checked~.meme-title span {
+input[type="radio"]:checked~.meme-title span {
     color: black;
 }
 
-input[type="checkbox"]:checked~.meme-img {
+input[type="radio"]:checked~.meme-img {
     max-height: 100vh;
 }
 
-input[type="checkbox"]:checked~.meme-img>* {
+input[type="radio"]:checked~.meme-img>* {
     scale: 1;
     opacity: 1;
 }
@@ -55,6 +55,12 @@ input[type="checkbox"]:checked~.meme-img>* {
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
+
+    flex-wrap: wrap;
+}
+
+.meme-img {
+    flex-basis: 100%;
 }
 
 .meme-title>* {
